@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Loading from './components/Loading';
+
 function App() {
+  
+  let Products=React.lazy(()=>import('./components/Products'))
+let CartItem=React.lazy(()=>import('./components/CartItem'))
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <React.Suspense fallback={<Loading/>}>
+     <Routes>
+       <Route path="/" element={ <Products/>}/>
+      
+       <Route path="/cart" element={ <CartItem/>}/>
+      
+      </Routes>
+      </React.Suspense>
     </div>
+    </BrowserRouter>
   );
 }
 
