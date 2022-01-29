@@ -51,7 +51,7 @@ const initProduct = {
        }
   case "DECREASE_QUANTITY":
      let quantity = state.Carts[action.payload].quantity;
-       if(state.Carts.quantity>1){
+       if(quantity>1){
           state.numberCart--;
           state.Carts[action.payload].quantity--;
       

@@ -14,6 +14,12 @@ import { useDispatch, useSelector } from 'react-redux';
     });
     console.log(items)
     console.log(ListCart)
+
+    if (totalitem===0) return <div>
+    <img src='https://cdn.dribbble.com/users/324185/screenshots/15805709/media/98798b7662d8a4b21cb66ad4bd430b48.jpg?compress=1&resize=800x600' alt="image"/>
+
+    <h5>Your Cart Is empty</h5>
+</div>;
   return (
   <>
                <div className='container' style={{textAlign:'center'}}>

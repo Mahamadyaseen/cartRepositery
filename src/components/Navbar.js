@@ -28,7 +28,7 @@ export default function Navbar() {
          Products
         </NavLink>
        <NavLink className="nav-link" to="/cart">
-         My Cart{totalitem}
+         My Cart<sup style={{fontSize:'17px',color:'red'}}>{totalitem}</sup>
        </NavLink>
        
       </ul>
