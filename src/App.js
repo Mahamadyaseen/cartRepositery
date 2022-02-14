@@ -9,6 +9,7 @@ import Loading from './components/Loading';
 function App() {
   
   let Products=React.lazy(()=>import('./components/Products'))
+  let Product=React.lazy(()=>import('./components/Items'))
 let CartItem=React.lazy(()=>import('./components/CartItem'))
   return (
     <BrowserRouter>
@@ -19,7 +20,7 @@ let CartItem=React.lazy(()=>import('./components/CartItem'))
        <Route path="/" element={ <Products/>}/>
       
        <Route path="/cart" element={ <CartItem/>}/>
-      
+      <Route path="/item" element={<Product/>}/>
       </Routes>
       </React.Suspense>
     </div>

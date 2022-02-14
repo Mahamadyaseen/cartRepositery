@@ -1,12 +1,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 function Products() {
-    const dispatch=useDispatch()
+    const dispatch=useDispatch();
+   const navigate=useNavigate();
  const [information, setInformation] = useState([]);
   useEffect(() => {
     
@@ -44,7 +46,13 @@ function Products() {
                         <button className='btn btn-lg btn-danger' onClick={()=>
                             {
                                 dispatch({type:'SELECTED-PRODUCT',payload:data})
+                                
                             }}>Add to Cart</button>
+                            <button className='btn  btn-danger my-2' onClick={()=>
+                            {
+                                navigate("/item",{state:data})
+                                
+                            }}>Veiw Product</button>  
                     </div> 
                     </div> 
                 )
